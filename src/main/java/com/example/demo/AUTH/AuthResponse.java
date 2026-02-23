@@ -1,0 +1,28 @@
+package com.example.demo.AUTH;
+
+public class AuthResponse {
+	
+	private String token;
+	private String type = "Bearer"; 
+	
+	public AuthResponse(String token) { 
+		
+		super();
+		this.token = token; 
+		
+	} 
+	
+	public String getToken() { 
+		
+		return token; 
+    } 
+	
+	public String getType() { 
+		
+		return type; 
+		
+	}
+	
+	
+
+}
