@@ -1,15 +1,15 @@
-from maven:3.9-eclipse-temurin-21 AS builder
-workdir /opt/app
-copy pom.xml ./
-copy src ./src
+FROM maven:3.9-eclipse-temurin-21 AS builder
+WORKDIR /build
+COPY pom.xml ./
+COPY src ./src
 RUN mvn package -DskipTests
 
-from eclipse-temurin:21-jre
-workdir /opt/app/SmartWareHouse
-run useradd -m app
-user app
-copy --from=builder /opt/app/target/*.jar /opt/app/app.jar
-expose 8080
-CMD ["java", "-jar", "/opt/app/app.jar"]
+FROM eclipse-temurin:21-jre
+WORKDIR /app
+RUN useradd -m appuser
+USER appuser
+COPY --from=builder /build/target/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["sh", "-c", "sleep 10 && java -jar app.jar"]
 
 

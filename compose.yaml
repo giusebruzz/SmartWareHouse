@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: smartwarehousenew-db
+    environment:
+      MYSQL_ROOT_PASSWORD: "#AlanBaker34"
+      MYSQL_DATABASE: smartwarehousenewbd 
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - smartnetwork
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: smartwarehouse-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/smartwarehousenewbd?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: "#AlanBaker34"
+    ports:
+      - "8080:8080"  
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - smartnetwork
+
+volumes:
+  db-data:
+
+networks:
+  smartnetwork:
+    driver: bridge
