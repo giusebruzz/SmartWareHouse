@@ -25,20 +25,6 @@ Struttura del progetto:
      ├─ Repository
      └─ Service
 
-application.properties:
-
-spring.datasource.url=jdbc:mysql://localhost:3306/smartwarehouse
-
-spring.datasource.username=root
-
-spring.datasource.password=yourpassword
-
-spring.jpa.hibernate.ddl-auto=update
-
-jwt.secret=your_secret_key_here
-
-jwt.expiration=86400000
-
 API Endpoints:
 - Auth:
   
