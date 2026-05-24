@@ -5,8 +5,10 @@ services:
     image: mysql:8.0
     container_name: smartwarehousenew-db
     environment:
-      MYSQL_ROOT_PASSWORD: "#AlanBaker34"
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: smartwarehousenewbd 
+	  MYSQL_USER: appuser
+	  MYSQL_PASSWORD: ${DB_PASSWORD} 
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s
@@ -24,8 +26,8 @@ services:
     container_name: smartwarehouse-backend
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/smartwarehousenewbd?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: "#AlanBaker34"
+      SPRING_DATASOURCE_USERNAME: appuser
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
     ports:
       - "8080:8080"  
     depends_on:
