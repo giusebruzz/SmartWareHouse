@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.demo.Dati.Role;
+import com.example.demo.Entity.Role;
 
 public interface RoleRepository extends JpaRepository<Role,Long>{
 	

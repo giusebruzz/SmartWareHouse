@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.AUTH.UserDetailsImpl;
-import com.example.demo.Dati.User;
+import com.example.demo.Entity.User;
 import com.example.demo.Repository.UserRepository;
 
 @Service

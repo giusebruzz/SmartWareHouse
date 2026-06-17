@@ -2,9 +2,9 @@ package com.example.demo.Service;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Dati.Tool;
-import com.example.demo.Dati.User;
-import com.example.demo.Dati.Work;
+import com.example.demo.Entity.Tool;
+import com.example.demo.Entity.User;
+import com.example.demo.Entity.Work;
 import com.example.demo.Exception.ToolNotFoundException;
 import com.example.demo.Exception.UserNotFoundException;
 import com.example.demo.Exception.WorkNotFoundException;

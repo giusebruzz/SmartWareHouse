@@ -1,4 +1,4 @@
-package com.example.demo.Dati;
+package com.example.demo.Entity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.DTO.LastSeenDTO;
-import com.example.demo.Dati.LastSeen;
-import com.example.demo.Dati.User;
+import com.example.demo.Entity.LastSeen;
+import com.example.demo.Entity.User;
 import com.example.demo.Exception.UserNotFoundException;
 import com.example.demo.Repository.LastSeenRepository;
 import com.example.demo.Repository.RoleRepository;

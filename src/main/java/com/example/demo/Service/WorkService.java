@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.DTO.CreateWorkDTO;
 import com.example.demo.DTO.WorkDTO;
-import com.example.demo.Dati.User;
-import com.example.demo.Dati.Work;
 import com.example.demo.ENUM.StateWork;
 import com.example.demo.ENUM.StatusUser;
+import com.example.demo.Entity.User;
+import com.example.demo.Entity.Work;
 import com.example.demo.Exception.UserNotFoundException;
 import com.example.demo.Exception.WorkAlreadyExistException;
 import com.example.demo.Exception.WorkNotFoundException;

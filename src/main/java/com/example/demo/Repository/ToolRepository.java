@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.demo.Dati.Tool;
+import com.example.demo.Entity.Tool;
 
 public interface ToolRepository extends JpaRepository<Tool,Long>{
 	
